@@ -1,7 +1,7 @@
 [workspace]
 
 members = [
-    "aoc_input_resolver",
+    "aoc_input_resolver", "day1",
     "day4",
 ]
 resolver = "2"
