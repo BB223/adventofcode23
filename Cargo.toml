@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "aoc_input_resolver",
+    "day4",
+]
+resolver = "2"
