@@ -1,0 +1,9 @@
+[package]
+name = "day4"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aoc_input_resolver = { path = "../aoc_input_resolver" }
+regex = "1.10.6"
+tokio = { version = "1.39.2", features = ["full"] }
