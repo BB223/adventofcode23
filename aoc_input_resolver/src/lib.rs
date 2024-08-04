@@ -7,7 +7,8 @@ async fn get_input_web(day: u32) -> Result<String> {
     let url = format!("https://adventofcode.com/2023/day/{}/input", day);
     println!("Requesting... {}", url);
 
-    client.get(url)
+    client
+        .get(url)
         .header("cookie", env::var("SESSION_COOKIE").unwrap())
         .send()
         .await?

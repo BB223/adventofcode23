@@ -11,16 +11,21 @@ async fn main() {
     for (i, line) in lines.into_iter().enumerate() {
         let clean_line = regex.replace(line, "");
         let inputs: Vec<&str> = clean_line.split("|").collect();
-        let winning: Vec<i32> = inputs[0].split_whitespace().map(|number| number.parse().unwrap()).collect();
-        let own: Vec<i32> = inputs[1].split_whitespace().map(|number| number.parse().unwrap()).collect();
+        let winning: Vec<i32> = inputs[0]
+            .split_whitespace()
+            .map(|number| number.parse().unwrap())
+            .collect();
+        let own: Vec<i32> = inputs[1]
+            .split_whitespace()
+            .map(|number| number.parse().unwrap())
+            .collect();
         let exp = matcher(&winning, &own);
-        for n in i+1..=i+exp  {
+        for n in i + 1..=i + exp {
             multi[n] += multi[i];
         }
     }
     println!("{}", multi.iter().sum::<u32>());
 }
-
 
 fn matcher(lookup: &Vec<i32>, input: &Vec<i32>) -> usize {
     let mut exp = 0;
@@ -31,4 +36,3 @@ fn matcher(lookup: &Vec<i32>, input: &Vec<i32>) -> usize {
     }
     exp
 }
-
